@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Hamnen
 {
     public class Boat
     {
         public string BoatId = idNumber();
-        public string BoatType;
-
+        public string BoatType { get; set; }
         public int Weight { get; set; }
         public int Speed { get; set; }
         public int NoOfBerths { get; set; }
@@ -29,7 +26,7 @@ namespace Hamnen
         public int HorsePower = random.Next(10, 1001);
         public MotorBoat()
         {
-            BoatId = "M" + BoatId;
+            BoatId = "M-" + BoatId;
             BoatType = "Motorbåt";
             Weight = random.Next(200, 3000);
             Speed = random.Next(0, 60);
@@ -43,7 +40,7 @@ namespace Hamnen
         public int BoatLength = random.Next(0, 61);
         public SailingBoat()
         {
-            BoatId = "M" + BoatId;
+            BoatId = "S-" + BoatId;
             BoatType = "Segelbåt";
             Weight = random.Next(800, 6000);
             Speed = random.Next(0, 12);
@@ -57,7 +54,7 @@ namespace Hamnen
         public int Containers = random.Next(0, 501);
         public CargoShip()
         {
-            BoatId = "M" + BoatId;
+            BoatId = "L-" + BoatId;
             BoatType = "Lastfartyg";
             Weight = random.Next(3000, 20000);
             Speed = random.Next(0, 20);
